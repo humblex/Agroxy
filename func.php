@@ -304,6 +304,17 @@ class threadDisplay{
     	$upItem->execute();
     }
 
+// removes stock from DB
+    public function deleteStock($d_ident)
+    {
+    	$this->getDB();
+    	$delCon = new PDO("mysql:host=$this->serverName;dbname=$this->serverDatabase",$this->serverUsername,$this->serverPassword);
+
+    	$deleteItem = $delCon->prepare("DELETE FROM stock WHERE stk_id='$d_ident' ");
+    		
+    	$deleteItem->execute();
+    }
+
 
 	public function fetchItems()
 	{
