@@ -83,7 +83,7 @@
 	}
 
 //deleting the stock
-	if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['del_submit']))
+	if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['delete_submit']))
 	{
 				$del_ident = $_POST['delID']; 
 				$obj->deleteStock($del_ident);
