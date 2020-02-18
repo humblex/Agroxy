@@ -243,6 +243,132 @@
 				header('location:market.php');
 		}	
 	}
+
+//delete stock view
+	if(isset($_GET["d"]))
+	{	
+		$checkmate = 0;
+		$deleteID = $obj->retrieveFromUrl($_GET["d"]);
+		foreach($stock as $datcheck)
+		{
+			if(($datcheck["stk_id"] == $deleteID) && ($post_user == $datcheck["stk_owner"]))
+			{	
+				$checkmate = 1;
+								
+		?>
+
+				<!DOCTYPE html>
+				<html>
+				<head>
+				<title>Agroxy Forum | Forum</title>
+				<meta name="keywords" content="Bootstrap Responsive Templates, Iphone Compatible Templates, Smartphone Compatible Templates, Ipad Compatible Templates, Flat Responsive Templates"/>
+				<meta name="viewport" content="width=device-width, initial-scale=1">	
+				<!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+				--><script src="js/jquery-1.11.0.min.js"></script>
+				<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+				<link href="css/style.css" rel='stylesheet' type='text/css' />
+				<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+				</head>
+				<body>
+					<!--start-header-->
+							<div id="home" class="header">
+									<div class="top-header">
+										<div class="container">
+											<div class="logo">
+												<a href="index.php"><h3>Agroxy</h3><h1>Forum</h1></a>  
+											</div>
+											<!--start-top-nav-->
+											 <nav class="top-nav">
+												<ul>
+													<li class="active"><a  href="logout.php">Log out</a></li>
+												</ul>
+											</nav>
+										
+										</div>
+								</div>			
+
+
+
+						<div class="navgation">
+									<div class="menu">
+				                         <a class="toggleMenu" href="#"><img src="images/menu-icon.png" alt="" /> </a>
+											<ul class="nav" id="nav">
+											<li><a href="index.php">Home</a></li>
+											<li><a href="market.php" class="active">Market</a></li>
+											<li><a href="forum2.php" >Forum</a></li>
+											<li><a href="articles.php">Articles</a></li>
+											<li><a href="contact.php">Contact</a></li>
+											</ul>
+									</div>
+									<div class="search2">
+									  <form>
+										 <input type="text"  name= "search" value="Search.."/>
+										 <input type="submit" value="">
+									  </form>
+									</div>
+									<div class="clearfix"> </div>
+						
+						</div>
+						
+						</div>
+					<!--End-header-->
+							
+						<!--starts-blog-->
+						<div class="blog">
+							<div class="container">
+								<div class="blog-main">
+									<div class="col-md-8 blog-main-left">
+										<form action="thread.php" method="post">
+
+											<br/>
+											<centre><h2>DELETE STOCK</h2></centre><br/><br/>
+											<input type="hidden" name="delID" class= "form-control" value="<?php echo $deleteID;?>" />
+
+											<b>Are you sure you want to delete this stock?</b> <br/>
+											<input type="submit" value="YES" class="btn btn-danger" name="delete_submit"/>
+											<input type="submit" value="NO" class="btn btn-success" name="no_submit"/>
+											
+										</form>
+
+									</div>
+									<div class="col-md-4 blog-main-left">
+										<h3>CATEGORIES</h3>
+										<div class="ctgry">
+										<ul>
+										<li><a href="crop.php">Crops</a></li>
+										<li><a href="livestock.php">Livestock</a></li>
+										<li><a href="tools.php">Machinery And Equipment</a></li>
+										<li><a href="strategy.php">Commodity Marketing</a></li>
+										<li><a href="mgt.php">Farm Management</a></li>
+										<li><a href="rural.php">Rural Issues</a></li>
+										</ul>
+										</div>
+									</div>
+									<div class="clearfix"> </div>
+								</div>
+
+							</div>
+						</div>
+						<!--end-blog-->
+						 <div class="footer">
+				                         <div class="container">
+				                                    <div class="footer-text">
+														<p>DESIGN BY <a href="contact.php">Agwu Ajah Chukwu</a></p>
+														<p>CopyRight <a href="contact.php">Agroxy Forum</a> @2017</p>
+													</div>
+				                         </div>
+									<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+				     	</div>
+				</body>
+				</html>
+	<?php 
+			}
+		}
+		if($checkmate == 0)
+		{
+				header('location:market.php');
+		}	
+	}
 	
 
 	if(isset($_GET["o"]) && ($post_user))
