@@ -2,6 +2,8 @@
 	error_reporting(0);
 	session_start();
 	$userOn = $_SESSION["farmer"];
+	$confirmDelete = $_SESSION["stockDeleted"];
+
 	require('connections.php');
 	require('func.php');
 
@@ -137,7 +139,17 @@
 					<div class="col-md-8 blog-main-left">
 						<h3>MARKET ANALYSIS</h3><br/>
 
-
+						<?php 
+								if(isset($_GET["s"]))
+								{	
+									
+									$confirmDelete = $obj->retrieveFromUrl($_GET["s"]);
+									if ($confirmDelete == 1) {
+										echo "<div class='alert alert-success'> You have successfully deleted the stock.</div>";
+									}
+								}
+								header("Refresh: 1; url=market.php");
+						?>
 						<div class="blg">
 
 								<table style="width:100%">

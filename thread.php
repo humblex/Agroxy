@@ -88,7 +88,8 @@
 				$del_ident = $_POST['delID']; 
 				$obj->deleteStock($del_ident);
 
-		 		header("Refresh: 1; url=market.php");
+		    	$success = 1;
+		 		header("Refresh: 1; url=market.php?s=$success");
 
 	}
 
@@ -549,7 +550,7 @@
 
   		if($checkmate1 == 0)
 		{
-			//echo "<div class='alert alert-warning'> Oops! You can't update somebody else's stock.</div>";
+				//echo "<div class='alert alert-warning'> Oops! You can't order your own stock.</div>";
 				header('location:market.php');
 		}	
 	} 

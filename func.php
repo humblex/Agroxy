@@ -313,6 +313,7 @@ class threadDisplay{
     	$deleteItem = $delCon->prepare("DELETE FROM stock WHERE stk_id='$d_ident' ");
     		
     	$deleteItem->execute();
+
     }
 
 
