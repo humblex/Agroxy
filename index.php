@@ -39,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					  <script type="text/javascript" src="js/modernizr.custom.min.js"></script>    
 					<link href="css/popup-box.css" rel="stylesheet" type="text/css" media="all"/>
 					<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
-					<!---//pop-up-box---->
+			<!---//pop-up-box---->
 		<!--End-header-->
 		<div class="navgation">
 					<div class="menu">

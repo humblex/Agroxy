@@ -168,6 +168,11 @@
 									    			<a href='thread.php?u=$id'><input type='submit' class='btn btn-warning ' value='Update' id='update'></a>
 									    				
 									    			</td>
+
+									    			<td style='padding:5px'>
+									    			<a href='thread.php?d=$id'><input type='submit' class='btn btn-danger ' value='Delete' id='delete'></a>
+									    				
+									    			</td>
 							    				</tr>";
 							    			}
 							    			else

@@ -82,6 +82,23 @@
 
 	}
 
+//deleting the stock
+	if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['del_submit']))
+	{
+				$del_ident = $_POST['delID']; 
+				$obj->deleteStock($del_ident);
+
+		 		header("Refresh: 1; url=market.php");
+
+	}
+
+//Cancel deleting the stock
+	if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['no_submit']))
+	{
+		 		header("Refresh: 1; url=market.php");
+
+	}
+
 //ordering a stock
 	if(($_SERVER['REQUEST_METHOD'] == 'POST') && isset($_POST['order_submit']))
 	{
@@ -321,10 +338,10 @@
 										<form action="thread.php" method="post">
 
 											<br/>
-											<centre><h2>DELETE STOCK</h2></centre><br/><br/>
+											<centre><h2>DELETE STOCK</h2></centre><br/>
 											<input type="hidden" name="delID" class= "form-control" value="<?php echo $deleteID;?>" />
 
-											<b>Are you sure you want to delete this stock?</b> <br/>
+											<b>Are you sure you want to delete this stock?</b> <br/> <br/>
 											<input type="submit" value="YES" class="btn btn-danger" name="delete_submit"/>
 											<input type="submit" value="NO" class="btn btn-success" name="no_submit"/>
 											
